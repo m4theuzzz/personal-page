@@ -1,8 +1,8 @@
 :root {
     --font-size-1: clamp(12px, 1vw, 24px);
     --font-size-2: clamp(6px, 1.6vw, 14px);
-    --font-size-title-1: clamp(18px, 2vw, 48px);
-    --font-size-title-2: clamp(14px, 1.4vw, 36px);
+    --font-size-title-1: clamp(24px, 2vw, 48px);
+    --font-size-title-2: clamp(18px, 1.4vw, 36px);
     --background-color-1: rgba(109, 143, 116, 0.3);
     --background-color-2: rgba(109, 143, 116, 0.8);
     --height-size-1: clamp(40px, 8vh, 60px);
@@ -80,6 +80,10 @@ h6 {
 
 .badge {
     background-color: var(--background-color-2);
+}
+
+.card {
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (min-width: 800px) {
