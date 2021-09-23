@@ -1,5 +1,5 @@
 #navigate {
-    background-color: var(--background-color-1);
+    background-color: rgb(213, 221, 214);
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -22,16 +22,28 @@
     display: none;
 }
 
+#searchIcon {
+    position: relative;
+    top: -2px;
+}
+
 .search {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
 }
 
 @media screen and (min-width: 800px) {
     .links {
-        width: 70%;
+        width: 80%;
+    }
+
+    .links a {
+        margin: 0 2%;
+    }
+
+    .search {
+        width: 20%;
     }
 
     .tab {
@@ -46,8 +58,12 @@
         display: inline;
     }
 
+    .search {
+        width: 36%;
+    }
+
     .compactMenu {
-        width: 5vw;
+        width: 40px;
         height: var(--height-size-2);
         background-color: var(--background-color-1);
         border: 1px solid rgba(109, 143, 116, 0.3);

@@ -1,34 +1,39 @@
 const app = new Vue({
     el: "#app",
     data: {
-        navLinks: [
-            { name: "Perfil", href: "#profile" },
-            { name: "Projetos", href: "#projects" },
-            { name: "Experiência", href: "#experience" },
-            { name: "Repositórios no Github", href: "#repos" },
-            { name: "Conteúdo", href: "#recommendations" },
-        ],
+        navLinks: NAV_LINKS,
         pucLogo: "./public/images/puc-logo.png",
-        user: {
-            name: "Matheus Santos",
-            description: "",
-            social: [
-                { name: "LinkedIn", href: "" },
-                { name: "GitHub", href: "" }
-            ]
-        }
+        user: USER,
+        allProjects: ALL_PROJECTS,
+        projectsFilterTypes: PROJECT_TYPES,
+        apliedFilter: "",
+        selectedProject: {},
+        searchValue: ""
     },
     computed: {
-        complemented: {
+        toRenderProjects: {
             get: function () {
-                return this.message + "!";
+                if (this.apliedFilter.length == 0) {
+                    return this.allProjects;
+                }
+
+                return this.applyFiltersToProjects(this.allProjects, this.apliedFilter);
             }
         }
     },
-    methods: {},
-    components: components
+    watch: {
+        searchValue: function (value) {
+            window.find(value, false, false, false, true, false);
+        }
+    },
+    methods: {
+        applyFiltersToProjects: function (allProjects, filter) {
+            return allProjects.filter(project => {
+                if (project.types.indexOf(filter) > -1) {
+                    return project;
+                }
+            });
+        }
+    },
+    components: COMPONENTS
 });
-
-const reverseMessage = () => {
-    return app.message.split('').reverse().join('');
-};

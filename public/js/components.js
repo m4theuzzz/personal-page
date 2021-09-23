@@ -42,16 +42,18 @@ const footTemplate = `
 
 const profileTemplate = `
 <div id="profile">
-    <div class="profileImage"></div>
+    <div class="profileImage">
+        <img id="userImage" :src="user.image" />
+    </div>
     <div class="info">
         <div>
             <h5>{{ user.name }}</h5>
-            <p><b>Objetivos</b>: {{ user.description }}</p>
+            <p>{{ user.description }}</p>
         </div>
         <div>
             <h6>Redes Sociais</h6>
-            <div v-for="media in user.social">
-                <a :href="media.href" :title="media.name" about="_blank">
+            <div class="socialIcons">
+                <a v-for="media in user.social" :href="media.href" :title="media.name" target="_blank">
                     <svg v-if="media.name == 'LinkedIn'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
                         <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
                     </svg>
@@ -65,10 +67,73 @@ const profileTemplate = `
 </div>
 `;
 
-const components = {
+const projectsTemplate = `
+<div id="projects">
+    <div class="title">
+        <label class="h5">Projetos <span class="badge">{{ projects.length }}</span></label>
+        <label>
+            <select @change="updateSelectedFilter" class="form-select" aria-label="Default select example">
+                <option value="">Selecionar filtro</option>
+                <option v-for="type in types" v-bind:value="type">{{ type }}</option>
+            </select>
+        </label>
+    </div>
+    <div id="projectsHolder">
+        <div v-for="project in projects" class="listedProject card" @click="requestUpdateSelectedProject(project)">
+            <img :src="project.images[0]" class="desktop card-img-top">
+            <div class="card-body">
+                <h6 class="card-title">{{ project.title }}</h6>
+                <p class="mobile">{{ project.description }}</p>
+                <div class="typesHolder">
+                    <span v-for="type in project.types" class="badge type">{{ type }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`;
+
+const modalTemplate = `
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">{{ selectedproject.title }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="modal" class="modal-body">
+            <p>{{ selectedproject.description }}</p>
+            <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div v-if="selectedproject.images" class="carousel-item active">
+                        <img :src="selectedproject.images[0]" class="d-block w-100">
+                    </div>
+                    <div v-for="(image, index) in selectedproject.images" v-if="index > 0" class="carousel-item">
+                        <img :src="image" class="d-block w-100">
+                    </div>
+                </div>
+                <button v-if="selectedproject.images && selectedproject.images.length > 1" class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button v-if="selectedproject.images && selectedproject.images.length > 1" class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="typesHolder">
+                <span v-for="type in selectedproject.types" class="badge type">{{ type }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+`;
+
+const COMPONENTS = {
     "navigate": Vue.component("navigate", {
         props: ['links'],
-        template: navigateTemplate
+        template: navigateTemplate,
     }),
     "foot": Vue.component("foot", {
         props: ['logo'],
@@ -77,5 +142,30 @@ const components = {
     "profile": Vue.component("profile", {
         props: ['user'],
         template: profileTemplate
+    }),
+    "projects": Vue.component("projects", {
+        props: ['projects', 'types'],
+        data: function () {
+            return { selected: "" }
+        },
+        methods: {
+            requestUpdateSelectedProject: function (project) {
+                updateSelectedProject(project);
+            },
+            updateSelectedFilter: function (event) {
+                for (let i = 0; i < event.target.children.length; i++) {
+                    const option = event.target.children[i];
+                    if (option.selected) {
+                        updateProjectFilter(option.value);
+                        break;
+                    }
+                }
+            }
+        },
+        template: projectsTemplate
+    }),
+    "modal": Vue.component("modal", {
+        props: ['selectedproject'],
+        template: modalTemplate
     })
 }

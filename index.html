@@ -9,26 +9,34 @@
     <link rel="stylesheet" href="./modules/css/bootstrap.min.css">
     <link rel="stylesheet" href="./public/css/global.css">
     <link rel="stylesheet" href="./public/css/navigate.css">
+    <link rel="stylesheet" href="./public/css/profile.css">
+    <link rel="stylesheet" href="./public/css/projects.css">
     <link rel="stylesheet" href="./public/css/footer.css">
 </head>
 
 <body>
     <div id="app">
         <header>
-            <navigate :links="navLinks"></navigate>
+            <navigate :links="navLinks" v-bind:searchinput="searchValue"></navigate>
         </header>
 
         <section>
             <profile :user="user"></profile>
+            <projects :projects="toRenderProjects" :types="projectsFilterTypes"></projects>
         </section>
 
         <footer>
             <foot :logo="pucLogo"></foot>
         </footer>
+
+        <div class="modal" tabindex="-1" id="appModal">
+            <modal :selectedproject="selectedProject"></modal>
+        </div>
     </div>
 
     <script src="./modules/js/bootstrap.bundle.min.js"></script>
     <script src="./modules/js/vueDev.js"></script>
+    <script src="./public/js/env.js"></script>
     <script src="./public/js/components.js"></script>
     <script src="./public/js/app.js"></script>
     <script src="./public/js/utils.js"></script>

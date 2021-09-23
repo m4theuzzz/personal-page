@@ -1,0 +1,76 @@
+#projects {
+    width: 100%;
+    overflow-y: scroll;
+}
+
+#modal {
+    height: 70vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#projectsHolder {
+    display: flex;
+    width: max-content;
+}
+
+#carousel {
+    background-color: var(--background-color-1);
+    position: relative;
+    height: 60%;
+}
+
+.carousel-item img {
+    object-fit: contain;
+}
+
+.type {
+    margin-right: 1%;
+}
+
+.typesHolder {
+    width: 100%;
+}
+
+.listedProject {
+    width: 35vh;
+    margin-right: 1%;
+}
+
+.listedProject img {
+    background-color: var(--background-color-1);
+    object-fit: cover;
+    height: 50%;
+}
+
+@media screen and (min-width: 800px) {
+    .listedProject {
+        aspect-ratio: 7/8;
+    }
+
+    #modal {
+        width: 60vw;
+    }
+
+    #carousel {
+        left: 2%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .listedProject {
+        width: 80vw;
+    }
+
+    #modal {
+        width: 100vw;
+    }
+
+    #carousel {
+        left: -3%;
+        width: 105%;
+    }
+}
