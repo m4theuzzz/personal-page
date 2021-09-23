@@ -1,0 +1,15 @@
+#foot {
+    background-color: var(--background-color-1);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    width: 100vw;
+    height: var(--height-size-1);
+}
+
+#foot img {
+    height: var(--height-size-1);
+    width: auto;
+}
