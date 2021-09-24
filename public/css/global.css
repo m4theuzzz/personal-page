@@ -5,6 +5,7 @@
     --font-size-title-2: clamp(18px, 1.4vw, 36px);
     --background-color-1: rgba(109, 143, 116, 0.3);
     --background-color-2: rgba(109, 143, 116, 0.8);
+    --background-color-3: rgba(109, 143, 116, 0.1);
     --height-size-1: clamp(40px, 8vh, 60px);
     --height-size-2: clamp(30px, 3vh, 45px);
     --input-height: clamp(16px, 6vh, 28px);

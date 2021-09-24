@@ -130,6 +130,24 @@ const modalTemplate = `
 </div>
 `;
 
+const experienceTemplate = `
+<div id="experience">
+    <div class="title">
+        <label class="h5">Experiências <span class="badge">{{ experiences.length }}</span></label>
+    </div>
+    <div>
+        <div v-for="experience in experiences" class="experienceHolder">
+            <img class="companyLogo" :src="experience.companyLogo" />
+            <div class="experienceInfo">
+                <h6>{{ experience.title }}</h6>
+                <p>{{ experience.description }}</p>
+                <i>{{ experience.period }}</i>
+            </div>
+        </div>
+    </div>
+</div>
+`;
+
 const COMPONENTS = {
     "navigate": Vue.component("navigate", {
         props: ['links'],
@@ -167,5 +185,9 @@ const COMPONENTS = {
     "modal": Vue.component("modal", {
         props: ['selectedproject'],
         template: modalTemplate
+    }),
+    "experience": Vue.component("experience", {
+        props: ['experiences'],
+        template: experienceTemplate
     })
 }

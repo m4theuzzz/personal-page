@@ -1,0 +1,21 @@
+.experienceHolder {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color-3);
+    border-radius: 4px;
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2.4%;
+}
+
+.experienceHolder img {
+    margin: 0 1%;
+}
+
+.companyLogo {
+    width: 100px;
+    aspect-ratio: 1;
+}

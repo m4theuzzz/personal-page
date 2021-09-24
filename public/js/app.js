@@ -8,6 +8,7 @@ const app = new Vue({
         projectsFilterTypes: PROJECT_TYPES,
         apliedFilter: "",
         selectedProject: {},
+        experiences: EXPERIENCES,
         searchValue: ""
     },
     computed: {

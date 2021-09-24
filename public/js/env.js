@@ -44,3 +44,18 @@ const ALL_PROJECTS = [
 ];
 
 const PROJECT_TYPES = ["WEB", "NodeJS", "Electron", "API", "Desktop", "JSON", "Database", "WebSocket", "TCP", "4YouSee", "GitHub"];
+
+const EXPERIENCES = [
+    {
+        title: "Analista Desenvolvedor Junior",
+        description: "Atuo principalmente com sistemas de integração com outras plataformas, mas como o time de desenvolvimento não é muito grande, trabalho com todas as áreas de desenvolvimento da empresa e atuo com demandas vindas do suporte.",
+        period: "11/2020 até o momento",
+        companyLogo: "./public/images/4uc-logo.png"
+    },
+    {
+        title: "Estagiário de Desenvolvimento",
+        description: "Era responsável pela criação de WebApps demandados por clientes para a execução no Player da empresa, além disso, atuava resolvendo demandas do suporte.",
+        period: "09/2019 a 11/2020",
+        companyLogo: "./public/images/4uc-logo.png"
+    }
+];
