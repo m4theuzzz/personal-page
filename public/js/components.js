@@ -82,7 +82,7 @@ const projectsTemplate = `
         <div v-for="project in projects" class="listedProject card" @click="requestUpdateSelectedProject(project)">
             <img :src="project.images[0]" class="desktop card-img-top">
             <div class="card-body">
-                <h6 class="card-title">{{ project.title }}</h6>
+                <h6 class="card-title"><a href="#">{{ project.title }}</a></h6>
                 <p class="mobile">{{ project.description }}</p>
                 <div class="typesHolder">
                     <span v-for="type in project.types" class="badge type">{{ type }}</span>
@@ -148,6 +148,21 @@ const experienceTemplate = `
 </div>
 `;
 
+const reposTemplate = `
+<div id="repos">
+    <div class="title">
+        <label class="h5">Repositórios Públicos <span class="badge">{{ repos.length }}</span></label>
+    </div>
+    <div id="reposHolder">
+        <div v-for="repository in repos" class="repo">
+            <h6><a :href="repository.href" target="_blank">{{ repository.title }}</a></h6>
+            <p>{{ repository.description }}</p>
+            <i>Atualizado em: <b>{{ repository.updatedAt }}</b></i>
+        </div>
+    </div>
+</div>
+`;
+
 const COMPONENTS = {
     "navigate": Vue.component("navigate", {
         props: ['links'],
@@ -189,5 +204,9 @@ const COMPONENTS = {
     "experience": Vue.component("experience", {
         props: ['experiences'],
         template: experienceTemplate
+    }),
+    "repos": Vue.component("repos", {
+        props: ['repos'],
+        template: reposTemplate
     })
 }

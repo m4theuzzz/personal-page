@@ -1,0 +1,52 @@
+#repos {
+    width: 100%;
+    overflow-y: scroll;
+}
+
+#reposHolder {
+    display: flex;
+    width: max-content;
+}
+
+.repo {
+    background-image: url("../images/folder.svg");
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+    background-color: var(--background-color-3);
+    border-radius: 4px;
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: .4%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-right: 1%;
+}
+
+.repo h6 {
+    padding-top: 0.7%;
+}
+
+@media screen and (min-width: 800px) {
+    .repo {
+        width: 35vw;
+        background-position: 1% 4%;
+        background-size: 2vw;
+    }
+
+    .repo h6 {
+        padding-left: 8%;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .repo {
+        width: 85vw;
+        background-position: 1% 5%;
+        background-size: 5vw;
+    }
+
+    .repo h6 {
+        padding-left: 7%;
+    }
+}

@@ -9,6 +9,7 @@ const app = new Vue({
         apliedFilter: "",
         selectedProject: {},
         experiences: EXPERIENCES,
+        repositories: REPOSITORIES,
         searchValue: ""
     },
     computed: {

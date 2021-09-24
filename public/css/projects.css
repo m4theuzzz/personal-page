@@ -37,7 +37,6 @@
 }
 
 .listedProject {
-    width: 35vh;
     margin-right: 1%;
 }
 
@@ -49,6 +48,7 @@
 
 @media screen and (min-width: 800px) {
     .listedProject {
+        width: 35vh;
         aspect-ratio: 7/8;
     }
 
