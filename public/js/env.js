@@ -2,8 +2,8 @@ const NAV_LINKS = [
     { name: "Perfil", href: "#profile" },
     { name: "Projetos", href: "#projects" },
     { name: "Experiência", href: "#experience" },
-    { name: "Portifólio", href: "#repos" },
-    { name: "Conteúdo", href: "#recommendations" },
+    { name: "Repositórios", href: "#repos" },
+    { name: "Recomendações", href: "#contents" },
 ];
 
 const USER = {
@@ -50,7 +50,7 @@ const ALL_PROJECTS = [
     {
         title: "Personal Page",
         images: ["./public/images/page/page-1.png", "./public/images/page/page-2.png", "./public/images/page/page-3.png", "./public/images/page/page-4.png"],
-        description: "",
+        description: "Uma aplicação WEB feita para a matéria de Desenvolvimento de Interfaces Web da PUC Minas.",
         types: ["VueJS", "GitHub", "PUC"]
     }
 ];
@@ -82,7 +82,30 @@ const REPOSITORIES = [
     {
         title: "Personal Page",
         description: "Uma aplicação WEB feita para a matéria de Desenvolvimento de Interfaces Web da PUC Minas.",
-        updatedAt: "30/08/2021",
+        updatedAt: "27/09/2021",
         href: "https://github.com/m4theuzzz/personal-page"
+    }
+];
+
+const CONTENT_RECOMMENDATIONS = [
+    {
+        title: "Curso de HTML5",
+        src: "https://www.youtube.com/embed/epDCjksKMok"
+    },
+    {
+        title: "Curso de JS",
+        src: "https://www.youtube.com/embed/BXqUH86F-kA"
+    },
+    {
+        title: "Curso de CSS3",
+        src: "https://www.youtube.com/embed/FRhM6sMOTfg"
+    },
+    {
+        title: "Curso de Node",
+        src: "https://www.youtube.com/embed/LLqq6FemMNQ"
+    },
+    {
+        title: "Curso de PHP",
+        src: "https://www.youtube.com/embed/F7KzJ7e6EAc"
     }
 ];

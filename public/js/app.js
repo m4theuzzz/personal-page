@@ -10,6 +10,7 @@ const app = new Vue({
         selectedProject: {},
         experiences: EXPERIENCES,
         repositories: REPOSITORIES,
+        contents: CONTENT_RECOMMENDATIONS,
         searchValue: ""
     },
     computed: {

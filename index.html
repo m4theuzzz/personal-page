@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./public/css/projects.css">
     <link rel="stylesheet" href="./public/css/experiences.css">
     <link rel="stylesheet" href="./public/css/repos.css">
+    <link rel="stylesheet" href="./public/css/contents.css">
     <link rel="stylesheet" href="./public/css/footer.css">
 </head>
 
@@ -27,6 +28,7 @@
             <projects :projects="toRenderProjects" :types="projectsFilterTypes"></projects>
             <experience :experiences="experiences"></experience>
             <repos :repos="repositories"></repos>
+            <contents :contents="contents"></contents>
         </section>
 
         <footer>

@@ -1,0 +1,29 @@
+#contents {
+    overflow-x: scroll;
+}
+
+#contentsHolder {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+}
+
+.listedContent {
+    margin-right: 1%;
+}
+
+.video {
+    aspect-ratio: 16/9;
+}
+
+@media screen and (min-width: 800px) {
+    .listedContent {
+        width: 36vw;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .listedContent {
+        width: 84vw;
+    }
+}

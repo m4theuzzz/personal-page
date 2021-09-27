@@ -163,6 +163,22 @@ const reposTemplate = `
 </div>
 `;
 
+const contentsTemplate = `
+<div id="contents">
+    <div class="title">
+        <label class="h5">Conteúdos Recomendados <span class="badge">{{ contents.length }}</span></label>
+    </div>
+    <div id="contentsHolder">
+        <div v-for="content in contents" class="listedContent card">
+            <iframe class="card-img-top video" :src="content.src"></iframe>
+            <div class="card-body">
+                <h6 class="card-title"><a :href="content.src" target="_blank">{{ content.title }}</a></h6>
+            </div>
+        </div>
+    </div>
+</div>
+`;
+
 const COMPONENTS = {
     "navigate": Vue.component("navigate", {
         props: ['links'],
@@ -208,5 +224,9 @@ const COMPONENTS = {
     "repos": Vue.component("repos", {
         props: ['repos'],
         template: reposTemplate
+    }),
+    "contents": Vue.component("contents", {
+        props: ['contents'],
+        template: contentsTemplate
     })
 }
