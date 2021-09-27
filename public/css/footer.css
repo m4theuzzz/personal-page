@@ -1,5 +1,5 @@
 #foot {
-    background-color: var(--background-color-1);
+    background-color: rgb(213, 221, 214);
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
