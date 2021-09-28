@@ -61,19 +61,19 @@ const EXPERIENCES = [
     {
         title: "Analista Desenvolvedor Junior",
         description: "Atuo principalmente com sistemas de integração com outras plataformas, mas como o time de desenvolvimento não é muito grande, trabalho com todas as áreas de desenvolvimento da empresa e atuo com demandas vindas do suporte.",
-        period: "11/2020 até o momento",
+        period: "De 11/2020 até o momento",
         companyLogo: "./public/images/4uc-logo.png"
     },
     {
         title: "Estagiário de Desenvolvimento",
         description: "Era responsável pela criação de WebApps demandados por clientes para a execução no Player da empresa, além disso, atuava resolvendo demandas do suporte.",
-        period: "09/2019 a 11/2020",
+        period: "De 09/2019 a 11/2020",
         companyLogo: "./public/images/4uc-logo.png"
     },
     {
         title: "Projetista de Automação",
         description: "Fui responsável pela automação do sistema de sensoriamento de radiação em um Iniciação Científica para o Departamento de Engenharia Nuclear da UFMG.",
-        period: "03/2018 a 07/2018",
+        period: "De 03/2018 a 07/2018",
         companyLogo: "./public/images/UFMG-logo.png"
     }
 ];
