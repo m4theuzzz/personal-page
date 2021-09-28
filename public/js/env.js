@@ -69,6 +69,12 @@ const EXPERIENCES = [
         description: "Era responsável pela criação de WebApps demandados por clientes para a execução no Player da empresa, além disso, atuava resolvendo demandas do suporte.",
         period: "09/2019 a 11/2020",
         companyLogo: "./public/images/4uc-logo.png"
+    },
+    {
+        title: "Projetista de Automação",
+        description: "Fui responsável pela automação do sistema de sensoriamento de radiação em um Iniciação Científica para o Departamento de Engenharia Nuclear da UFMG.",
+        period: "03/2018 a 07/2018",
+        companyLogo: "./public/images/UFMG-logo.png"
     }
 ];
 
