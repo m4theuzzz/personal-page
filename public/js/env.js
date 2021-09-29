@@ -36,6 +36,12 @@ const ALL_PROJECTS = [
         types: ["NodeJS", "API", "WebSocket", "4YouSee"]
     },
     {
+        title: "4YouSee TV Corporativa",
+        images: ["./public/images/flix/flix-1.jpeg"],
+        description: "Uma aplicação feita para rodar dentro do player 4YouSee, que organiza conteúdos configurados em um sistema navegável, onde o usuário pode escolher o que e quando tocar, quando quiser, interrompento uma mídia e retomando a execução do player normalmente após o término do uso desta funcionalidade.",
+        types: ["API", "VueJS", "4YouSee"]
+    },
+    {
         title: "4YouSee novoSGA",
         images: ["./public/images/wsl-logo.png"],
         description: "Foi desenvolvido um webapp que integra o 4YouSee Player com o sistema novoSGA, de gerenciamento de chamada de senhas, reproduzindo a senha chamada pelo sistema do governo no player desejado. Para o funcionamento, foi desenvolvido um aplicativo intermediário em python. Como o sistema do novoSGA é designado a linux, para a instalação plena no windows foi utilizado o WSL.",
@@ -94,6 +100,14 @@ const REPOSITORIES = [
 ];
 
 const CONTENT_RECOMMENDATIONS = [
+    {
+        title: "Fim de Ano 4YouSee",
+        src: "https://www.youtube.com/embed/9LvxIDSLPGM"
+    },
+    {
+        title: "DOOH",
+        src: "https://www.youtube.com/embed/MSzsTJo-XJY"
+    },
     {
         title: "Curso de HTML5",
         src: "https://www.youtube.com/embed/epDCjksKMok"
