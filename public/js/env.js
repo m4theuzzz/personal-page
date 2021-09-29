@@ -94,7 +94,7 @@ const REPOSITORIES = [
     {
         title: "Personal Page",
         description: "Uma aplicação WEB feita para a matéria de Desenvolvimento de Interfaces Web da PUC Minas.",
-        updatedAt: "27/09/2021",
+        updatedAt: "29/09/2021",
         href: "https://github.com/m4theuzzz/personal-page"
     }
 ];
