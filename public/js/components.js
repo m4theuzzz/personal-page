@@ -35,8 +35,6 @@ const navigateTemplate = `
 
 const footTemplate = `
 <div id="foot">
-    <span>Copyright 2021 - Disciplina de Desenvolvimento de Interfaces Web - <b>ICEI PUC Minas</b></span>
-    <img class="logo" :src="logo">
 </div>
 `;
 

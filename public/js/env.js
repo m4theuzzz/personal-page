@@ -65,8 +65,8 @@ const PROJECT_TYPES = ["NodeJS", "Electron", "API", "Desktop", "ElectronDB", "We
 
 const EXPERIENCES = [
     {
-        title: "Analista Desenvolvedor Junior",
-        description: "Atuo principalmente com sistemas de integração com outras plataformas, mas como o time de desenvolvimento não é muito grande, trabalho com todas as áreas de desenvolvimento da empresa e atuo com demandas vindas do suporte.",
+        title: "Analista Desenvolvedor",
+        description: "Atuo principalmente com sistemas de integração com outras plataformas, também trabalho com todas as áreas de desenvolvimento da empresa, usando PHP, Node.js, Angular, Vue.js e outros frameworks e atuo com demandas urgêntes vindas do suporte.",
         period: "De 11/2020 até o momento",
         companyLogo: "./public/images/4uc-logo.png"
     },
@@ -94,7 +94,7 @@ const REPOSITORIES = [
     {
         title: "Personal Page",
         description: "Uma aplicação WEB feita para a matéria de Desenvolvimento de Interfaces Web da PUC Minas.",
-        updatedAt: "29/09/2021",
+        updatedAt: "08/11/2021",
         href: "https://github.com/m4theuzzz/personal-page"
     }
 ];
