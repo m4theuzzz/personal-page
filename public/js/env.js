@@ -66,7 +66,7 @@ const PROJECT_TYPES = ["NodeJS", "Electron", "API", "Desktop", "ElectronDB", "We
 const EXPERIENCES = [
     {
         title: "Analista Desenvolvedor",
-        description: "Atuo principalmente com sistemas de integração com outras plataformas, também trabalho com todas as áreas de desenvolvimento da empresa, usando PHP, Node.js, Angular, Vue.js e outros frameworks e atuo com demandas urgêntes vindas do suporte.",
+        description: "Atuo principalmente com sistemas de integração com outras plataformas, também trabalho com todas as áreas de desenvolvimento da empresa, usando PHP, Node.js, Angular, Vue.js e outros frameworks e atuo com demandas urgentes vindas do suporte.",
         period: "De 11/2020 até o momento",
         companyLogo: "./public/images/4uc-logo.png"
     },
