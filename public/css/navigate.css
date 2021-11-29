@@ -68,6 +68,10 @@
     display: hidden;
 }
 
+#loadingGif {
+    max-height: 30px;
+}
+
 @media screen and (min-width: 800px) {
     .links {
         width: 80%;

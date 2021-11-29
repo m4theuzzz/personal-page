@@ -64,7 +64,7 @@ const fetchGitHubApi = async (value) => {
 
     let loading = document.createElement('li');
 
-    loading.innerHTML = `<img id="loadingImage" src="./public/images/loading-gif.gif" />`;
+    loading.innerHTML = `<img id="loadingGif" src="./public/images/loading-gif.gif" />`;
 
     dropdownList.appendChild(loading);
 
