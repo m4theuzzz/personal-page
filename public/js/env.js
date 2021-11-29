@@ -155,7 +155,7 @@ const reposInit = () => {
     fetch(`https://api.github.com/user/repos`, {
         headers: {
             "accept": "application/vnd.github.v3+json",
-            "Authorization": "token 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"
+            "Authorization": "token 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"
         }
     }).then(resp => {
         if (resp.status == 200) {
