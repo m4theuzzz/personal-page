@@ -94,13 +94,15 @@ const fetchGitHubApi = async (value) => {
 
         foundRepos.forEach(repo => {
             let li = document.createElement('li');
-            let a = document.createElement('a');
 
-            a.href = repo.href;
-            a.innerHTML = repo.title;
-            a.setAttribute('target', '_blank');
+            li.innerHTML = `
+                <a href="${repo.href}" target="_blank" class="repoFromSearch">
+                    <h7><b>${repo.title}</b></h7>
+                    <p>${repo.description}</p>
+                    <i>Atualizado em: <b>${repo.updatedAt}</b></i>
+                </a>
+            `;
 
-            li.appendChild(a);
             dropdownList.appendChild(li);
         });
 

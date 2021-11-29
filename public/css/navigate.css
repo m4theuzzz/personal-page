@@ -54,14 +54,11 @@
 #dropdownList li {
     border-radius: 6px;
     transition: .5s;
+    margin-bottom: 2%;
 }
 
 #dropdownList li:hover {
-    background-color: rgba(99, 99, 99, 0.3) !important;
-}
-
-#dropdownList li:nth-child(odd) {
-    background-color: rgba(109, 143, 116, 0.1);
+    background-color: rgba(99, 99, 99, 0.1) !important;
 }
 
 #dropdownMenuLink {
@@ -70,6 +67,33 @@
 
 #loadingGif {
     max-height: 30px;
+}
+
+.repoFromSearch {
+    background-image: url("../images/folder.svg");
+    background-repeat: no-repeat;
+    background-color: var(--background-color-3);
+    border-radius: 4px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-right: 1%;
+    background-position: .2vh 4%;
+}
+
+.repoFromSearch h7 {
+    margin: 0;
+    padding-top: .15vh;
+    padding-left: 10%;
+}
+
+.repoFromSearch p {
+    font-size: small;
+}
+
+.repoFromSearch i {
+    font-size: smaller;
 }
 
 @media screen and (min-width: 800px) {
