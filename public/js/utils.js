@@ -75,7 +75,7 @@ const fetchGitHubApi = async (value) => {
         const response = await fetch(query, {
             headers: {
                 "accept": "application/vnd.github.v3.text-match+json",
-                "Authorization": "token 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"
+                "Authorization": `token ${API_TOKEN}`
             }
         });
 

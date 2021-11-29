@@ -1,3 +1,7 @@
+
+
+const API_TOKEN = CryptoJS.AES.decrypt("U2FsdGVkX1/kf40U61e3nuWx+mi38+R7Vpt+ra3D89k3AHj/BjBFQe0WDPf4gvTwV7QjOIQuVcdD+JB6QeNlcQ==", "n07S@f3bu7w0rk5").toString(CryptoJS.enc.Utf8);
+
 const NAV_LINKS = [
     { name: "Perfil", href: "#profile" },
     { name: "Projetos", href: "#projects" },
@@ -121,7 +125,7 @@ const profileInit = () => {
     fetch(`https://api.github.com/user`, {
         headers: {
             "accept": "application/vnd.github.v3+json",
-            "Authorization": "token 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"
+            "Authorization": `token ${API_TOKEN}`
         }
     }).then(resp => {
         if (resp.status == 200) {
@@ -155,7 +159,7 @@ const reposInit = () => {
     fetch(`https://api.github.com/user/repos`, {
         headers: {
             "accept": "application/vnd.github.v3+json",
-            "Authorization": "token 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"
+            "Authorization": `token ${API_TOKEN}`
         }
     }).then(resp => {
         if (resp.status == 200) {
