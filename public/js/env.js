@@ -6,16 +6,6 @@ const NAV_LINKS = [
     { name: "Recomendações", href: "#contents" },
 ];
 
-const USER = {
-    name: "Matheus Santos",
-    description: "Desenvolvedor Web Full Stack, com proficiência em Node, JavaScript e PHP e possuo experiência com muitas outras linguagens que circundam o desenvolvimento Web. Curso Engenharia de Software e possuo experiência profissional na área.",
-    image: "./public/images/profile-image.jpg",
-    social: [
-        { name: "LinkedIn", href: "https://www.linkedin.com/in/matheus-vsantos/" },
-        { name: "GitHub", href: "https://github.com/m4theuzzz" }
-    ]
-};
-
 const ALL_PROJECTS = [
     {
         title: "4YouSee Event Trigger",
@@ -84,21 +74,6 @@ const EXPERIENCES = [
     }
 ];
 
-const REPOSITORIES = [
-    {
-        title: "Character Sheet",
-        description: "Uma aplicação Node com deploy em Electron e banco de dados simulado com JSON, a qual auxilia na criação e gerenciamento da ficha de um personagem de RPG de Mesa, baseada no sistema de Dungeons & Dragons.",
-        updatedAt: "30/08/2021",
-        href: "https://github.com/m4theuzzz/character-sheet"
-    },
-    {
-        title: "Personal Page",
-        description: "Uma aplicação WEB feita para a matéria de Desenvolvimento de Interfaces Web da PUC Minas.",
-        updatedAt: "08/11/2021",
-        href: "https://github.com/m4theuzzz/personal-page"
-    }
-];
-
 const CONTENT_RECOMMENDATIONS = [
     {
         title: "Fim de Ano 4YouSee",
@@ -129,3 +104,82 @@ const CONTENT_RECOMMENDATIONS = [
         src: "https://www.youtube.com/embed/F7KzJ7e6EAc"
     }
 ];
+
+let USER = {
+    id: 0,
+    name: "",
+    login: "",
+    description: "",
+    image: "./public/images/user-placeholder.svg",
+    social: [
+        { name: "LinkedIn", href: "https://www.linkedin.com/in/matheus-vsantos/" },
+        { name: "GitHub", href: "https://github.com/m4theuzzz" }
+    ]
+};
+
+const profileInit = () => {
+    fetch(`https://api.github.com/user`, {
+        headers: {
+            "accept": "application/vnd.github.v3+json",
+            "Authorization": "token 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"
+        }
+    }).then(resp => {
+        if (resp.status == 200) {
+            return resp.json();
+        }
+    }).then(json => {
+        USER.id = json.id;
+        USER.name = json.name;
+        USER.login = json.login;
+        USER.description = json.bio;
+        USER.image = json.avatar_url;
+    });
+};
+
+let REPOSITORIES = [];
+
+let formatDate = (date) => {
+    let obj = {};
+
+    obj.day = (date.getDate()).toLocaleString('pt-BR', { minimumIntegerDigits: 2, useGrouping: false });
+    obj.month = (date.getMonth() + 1).toLocaleString('pt-BR', { minimumIntegerDigits: 2, useGrouping: false });
+    obj.year = (date.getFullYear()).toLocaleString('pt-BR', { minimumIntegerDigits: 2, useGrouping: false });
+
+    obj.hours = (date.getHours()).toLocaleString('pt-BR', { minimumIntegerDigits: 2, useGrouping: false });
+    obj.minutes = (date.getMinutes()).toLocaleString('pt-BR', { minimumIntegerDigits: 2, useGrouping: false });
+
+    return obj;
+}
+
+const reposInit = () => {
+    fetch(`https://api.github.com/user/repos`, {
+        headers: {
+            "accept": "application/vnd.github.v3+json",
+            "Authorization": "token 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"
+        }
+    }).then(resp => {
+        if (resp.status == 200) {
+            return resp.json();
+        }
+    }).then(json => {
+
+        for (const repo of json) {
+            let date = formatDate(new Date(repo.updated_at));
+            let repository = {
+                id: repo.id,
+                title: repo.name,
+                description: repo.description,
+                updatedAt: `${date.day}/${date.month}/${date.year} às ${date.hours}:${date.minutes}`,
+                href: repo.html_url
+            }
+            REPOSITORIES.push(repository);
+        }
+    });
+};
+
+const init = () => {
+    profileInit();
+    reposInit();
+};
+
+init();

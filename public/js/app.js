@@ -11,7 +11,8 @@ const app = new Vue({
         experiences: EXPERIENCES,
         repositories: REPOSITORIES,
         contents: CONTENT_RECOMMENDATIONS,
-        searchValue: ""
+        searchValue: "",
+        searchResults: []
     },
     computed: {
         toRenderProjects: {
@@ -26,7 +27,7 @@ const app = new Vue({
     },
     watch: {
         searchValue: function (value) {
-            window.find(value, false, false, false, true, false);
+            fetchGitHubApi(value);
         }
     },
     methods: {
