@@ -60,7 +60,7 @@ const PROJECT_TYPES = ["NodeJS", "Electron", "API", "Desktop", "ElectronDB", "We
 const EXPERIENCES = [
     {
         title: "Engenheiro de Software",
-        description: "",
+        description: "Atuo expandindo os sistemas de integração da empresa.",
         period: "De 03/2022 até o momento",
         companyLogo: "./public/images/cobli.jpeg"
     },
