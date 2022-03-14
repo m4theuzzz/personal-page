@@ -60,7 +60,7 @@ const PROJECT_TYPES = ["NodeJS", "Electron", "API", "Desktop", "ElectronDB", "We
 const EXPERIENCES = [
     {
         title: "Engenheiro de Software",
-        description: "Atuo expandindo os sistemas de integração da empresa.",
+        description: "Atuo expandindo os sistemas de integração da empresa, melhorando API's já existente e criando novas, visando criar um ecosistema de integrações que facilite a experiência dos clientes atuais e possibilite a adesão de novos clientes.",
         period: "De 03/2022 até o momento",
         companyLogo: "./public/images/cobli.jpeg"
     },
