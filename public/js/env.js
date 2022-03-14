@@ -59,9 +59,15 @@ const PROJECT_TYPES = ["NodeJS", "Electron", "API", "Desktop", "ElectronDB", "We
 
 const EXPERIENCES = [
     {
+        title: "Engenheiro de Software",
+        description: "",
+        period: "De 03/2022 até o momento",
+        companyLogo: "./public/images/cobli.jpeg"
+    },
+    {
         title: "Analista Desenvolvedor",
         description: "Atuo principalmente com sistemas de integração com outras plataformas, também trabalho com todas as áreas de desenvolvimento da empresa, usando PHP, Node.js, Angular, Vue.js e outros frameworks e atuo com demandas urgentes vindas do suporte.",
-        period: "De 11/2020 até o momento",
+        period: "De 11/2020 a 03/2022",
         companyLogo: "./public/images/4uc-logo.png"
     },
     {
