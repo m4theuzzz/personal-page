@@ -162,10 +162,9 @@ let formatDate = (date) => {
 }
 
 const reposInit = () => {
-    fetch(`https://api.github.com/user/repos`, {
+    fetch(`https://api.github.com/search/repositories?q=user:M4theuzzz`, {
         headers: {
             "accept": "application/vnd.github.v3+json",
-            "Authorization": `token ${API_TOKEN}`
         }
     }).then(resp => {
         if (resp.status == 200) {
@@ -173,7 +172,7 @@ const reposInit = () => {
         }
     }).then(json => {
 
-        for (const repo of json) {
+        for (const repo of json.items) {
             let date = formatDate(new Date(repo.updated_at));
             let repository = {
                 id: repo.id,
